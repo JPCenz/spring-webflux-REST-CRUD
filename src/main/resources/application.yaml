@@ -1,0 +1,13 @@
+config:
+  uploads:
+    path: "D://Downloads//uploads//"
+spring:
+  application:
+    name: spring-webflux-rest-crud
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/demo_mongo_rest
+      # Uncomment and use these if you prefer separate host, port, and database configurations
+      # host: localhost
+      # port: 27017
+      # database: demo
