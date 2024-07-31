@@ -91,6 +91,70 @@ This project is a Spring Webflux-based RESTful CRUD application for managing pro
     }
     ```
 
+  # API V2
+
+### Ejemplos de Solicitudes
+
+- **Listar todos los productos**
+    ```http
+    GET /api/v2/productos
+    ```
+
+- **Ver detalles de un producto por ID**
+    ```http
+    GET /api/v2/productos/{id}
+    Content-Type: application/json
+    ```
+
+- **Crear un nuevo producto**
+    ```http
+    POST /api/v2/productos
+    Content-Type: application/json
+    {
+        "nombre": "Nombre del Producto",
+        "precio": 100.0,
+        "categoria": {
+            "id": "id_de_categoria"
+        }
+    }
+    ```
+
+- **Actualizar un producto por ID**
+    ```http
+    PUT /api/v2/productos/{id}
+    Content-Type: application/json
+    {
+        "nombre": "Nombre Actualizado del Producto",
+        "precio": 150.0,
+        "categoria": {
+            "id": "id_de_categoria_actualizada"
+        }
+    }
+    ```
+
+- **Eliminar un producto por ID**
+    ```http
+    DELETE /api/v2/productos/{id}
+    ```
+
+- **Subir un archivo para un producto**
+    ```http
+    POST /api/v2/productos/upload/{id}
+    Content-Type: multipart/form-data
+    {
+        "file": "archivo_a_subir"
+    }
+    ```
+
+- **Crear un nuevo producto con subida de archivo**
+    ```http
+    POST /api/v2/productos/create-upload/
+    Content-Type: multipart/form-data
+    {
+        "file": "archivo_a_subir",
+        "json": "{\"nombre\": \"Nombre del Producto\", \"precio\": 100.0, \"categoria\": {\"id\": \"id_de_categoria\"}}"
+    }
+    ```
 ## License
 
 This project is licensed under the MIT License.
