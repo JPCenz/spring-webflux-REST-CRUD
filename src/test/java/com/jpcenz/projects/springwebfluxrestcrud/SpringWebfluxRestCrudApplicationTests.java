@@ -1,7 +1,6 @@
 package com.jpcenz.projects.springwebfluxrestcrud;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jpcenz.projects.springwebfluxrestcrud.examples.PossibleTest;
 import com.jpcenz.projects.springwebfluxrestcrud.models.documents.Categoria;
 import com.jpcenz.projects.springwebfluxrestcrud.models.documents.Producto;
 import com.jpcenz.projects.springwebfluxrestcrud.service.ProductoService;
