@@ -69,7 +69,7 @@ public class ProductoController {
             }
             return service.save(producto);
         }).map(p -> {
-            response.put("producto", p.getId());
+            response.put("producto", p);
             response.put("mensaje", "Producto creado con éxito");
             response.put("timestamp", new Date());
             response.put("status", HttpStatus.CREATED.value());

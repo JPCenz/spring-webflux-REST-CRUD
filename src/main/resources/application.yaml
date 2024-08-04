@@ -1,4 +1,7 @@
 config:
+  base:
+    endpoint-v2: "/api/v2/productos"
+    endpoint: /api/productos
   uploads:
     path: "D://Downloads//uploads//"
 spring:

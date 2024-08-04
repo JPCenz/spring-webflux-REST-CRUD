@@ -81,4 +81,9 @@ public class ProductoServiceImpl implements ProductoService {
     public Flux<Categoria> findCategoriaByNombre(String nombre) {
         return categoriaDao.findAllByNombre(nombre);
     }
+
+    @Override
+    public Mono<Producto> findProductoByNombre(String nombre) {
+        return dao.findByNombre(nombre);
+    }
 }

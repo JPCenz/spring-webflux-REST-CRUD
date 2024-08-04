@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jpcenz.projects.springwebfluxrestcrud.models.documents.Producto;
 import com.jpcenz.projects.springwebfluxrestcrud.service.ProductoService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,13 +31,15 @@ import java.util.UUID;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class ProductoHandler {
-    @Autowired
-    ProductoService service;
+
+    private final ProductoService service;
     @Value("${config.uploads.path}")
     String path;
-    @Autowired
-    Validator validator;
+    private final Validator validator;
+
+
 
     public Mono<ServerResponse> listar(ServerRequest request) {
         return ServerResponse.ok()
