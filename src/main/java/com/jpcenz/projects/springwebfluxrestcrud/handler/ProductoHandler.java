@@ -27,6 +27,7 @@ import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @Slf4j
@@ -120,11 +121,16 @@ public class ProductoHandler {
     }
 
     public Mono<ServerResponse> eliminar(ServerRequest request) {
-
+        Map<String, Object> response = new HashMap<>();
         String id = request.pathVariable("id");
         log.info("Producto a eliminar: " + id);
         return service.findById(id).flatMap(p -> service.delete(p).then(ServerResponse.noContent().build()))
-                .switchIfEmpty(ServerResponse.notFound().build()).onErrorResume(error -> ServerResponse.badRequest().build());
+                .switchIfEmpty(Mono.error(new Exception("Producto no encontrado {} "+id)))
+                .onErrorResume(error -> {
+                    response.put("error", error.getMessage());
+                    return ServerResponse.badRequest().body(BodyInserters.fromValue(response));
+                }
+                ).log();
     }
 
     public Mono<ServerResponse> upload(ServerRequest request) {

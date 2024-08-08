@@ -9,10 +9,12 @@ import org.hibernate.validator.internal.util.logging.Log;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import reactor.core.publisher.Flux;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 @Slf4j
 public class SpringWebfluxRestCrudApplication implements CommandLineRunner {
 
