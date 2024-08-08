@@ -155,6 +155,8 @@ This project is a Spring Webflux-based RESTful CRUD application for managing pro
         "json": "{\"nombre\": \"Nombre del Producto\", \"precio\": 100.0, \"categoria\": {\"id\": \"id_de_categoria\"}}"
     }
     ```
+
+    POSTMAN LINK https://elements.getpostman.com/redirect?entityId=24549653-cb5d493f-294d-4ab7-8c3d-31bc0dec6339&entityType=collection
 ## License
 
 This project is licensed under the MIT License.
