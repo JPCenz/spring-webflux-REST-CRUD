@@ -1,12 +1,23 @@
+spring:
+  application:
+    name: spring-webflux-rest-crud
+    cloud:
+      discovery:
+        enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8080
+
 config:
   base:
     endpoint-v2: "/api/v2/productos"
     endpoint: /api/productos
   uploads:
     path: "D://Downloads//uploads//"
-spring:
-  application:
-    name: spring-webflux-rest-crud
+
   data:
     mongodb:
       uri: mongodb://localhost:27017/demo_mongo_rest
@@ -14,3 +25,4 @@ spring:
       # host: localhost
       # port: 27017
       # database: demo
+
